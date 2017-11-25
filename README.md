@@ -1,2 +1,2 @@
 # kueue
-Simple Kotlin async processing library built on top of Java executors.
+Simple Kotlin async processing library for Android built on top of Java executors.
