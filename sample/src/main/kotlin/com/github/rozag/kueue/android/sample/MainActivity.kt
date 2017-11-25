@@ -7,16 +7,9 @@ import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.Toast
-import com.github.rozag.kueue.Kueue
-import com.github.rozag.kueue.android.MainThreadExecutor
-import java.util.concurrent.Executors
 
 class MainActivity : AppCompatActivity() {
 
-    private val queue = Kueue(
-            workerExecutor = Executors.newSingleThreadExecutor(),
-            callbackExecutor = MainThreadExecutor()
-    )
     private lateinit var progressBar: ProgressBar
     private lateinit var generateBtn: Button
 
@@ -37,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun startRandomNumberGeneration() {
         toGenerationState()
-        queue.fromCallable { Thread.sleep(3000); (Math.random() * 100).toInt() }
+        SampleApp.queue.fromCallable { Thread.sleep(3000); (Math.random() * 100).toInt() }
                 .onComplete { generatedNumber ->
                     toInputState()
                     showGeneratedNumber(generatedNumber)
