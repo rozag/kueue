@@ -1,1 +1,2 @@
+include ':sample'
 include ":kueue", ":kueue-android"
