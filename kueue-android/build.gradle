@@ -1,5 +1,6 @@
 apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
+apply plugin: "com.novoda.bintray-release"
 
 android {
     compileSdkVersion compileSdk
@@ -54,4 +55,13 @@ android {
 dependencies {
     // Kotlin specific dependencies
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:${kotlinVersion}"
+}
+
+publish {
+    groupId = publishGroupId
+    artifactId = "kueue-android"
+    publishVersion = publishVersion
+    desc = publishDescription
+    licences = ["MIT"]
+    website = publishRepoUrl
 }
