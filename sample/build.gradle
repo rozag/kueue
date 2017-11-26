@@ -73,10 +73,10 @@ android {
 }
 
 dependencies {
-    implementation project(":kueue")
-    implementation project(":kueue-android")
-//    implementation "com.github.rozag:kueue:${publishVersion}"
-//    implementation "com.github.rozag:kueue-android:${publishVersion}"
+//    implementation project(":kueue")
+//    implementation project(":kueue-android")
+    implementation "com.github.rozag:kueue:${publishVersion}"
+    implementation "com.github.rozag:kueue-android:${publishVersion}"
 
     // Kotlin specific dependencies
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:${kotlinVersion}"
